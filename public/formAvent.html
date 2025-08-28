@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Aventureiros</title>
+    <!-- CSS para uma interface com tema de aventura -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@400;700&display=swap');
+
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px; 
+            background-color: #f5eeda; 
+            color: #4a2c2a;
+        }
+        h1 { 
+            font-family: 'MedievalSharp', cursive;
+            color: #8B4513;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        form { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            margin-bottom: 30px; 
+            background-color: #fff8e1; 
+            padding: 25px; 
+            border-radius: 8px; 
+            border: 2px solid #d2b48c;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        input, button { 
+            padding: 12px; 
+            border-radius: 5px; 
+            border: 1px solid #d2b48c;
+            font-size: 16px; 
+        }
+        button { 
+            background-color: #8B4513; 
+            color: white; 
+            cursor: pointer; 
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover { 
+            background-color: #a0522d; 
+        }
+        ul { 
+            list-style-type: none; 
+            padding: 0; 
+        }
+        li { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 15px; 
+            background-color: #fffaf0; 
+            margin-bottom: 10px; 
+            border-radius: 5px; 
+            border-left: 5px solid #d2b48c;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .info {
+            font-size: 1.1em;
+        }
+        .info strong {
+            color: #8B4513;
+        }
+        .actions button { 
+            margin-left: 8px; 
+            padding: 8px 12px; 
+            font-size: 14px; 
+        }
+        .actions .edit-btn { background-color: #5a9216; }
+        .actions .edit-btn:hover { background-color: #6b9e23; }
+        .actions .delete-btn { background-color: #a52a2a; }
+        .actions .delete-btn:hover { background-color: #c82333; }
+    </style>
+</head>
+<body>
+    <h1>Taverna dos Aventureiros</h1>
+
+    <!-- Formulário para adicionar ou editar aventureiros -->
+    <form id="aventureiro-form">
+        <!-- O campo de ID é necessário para criar e editar -->
+        <input type="number" name="id" id="aventureiro-id" placeholder="ID do Aventureiro" required>
+        <input type="text" name="nome" id="aventureiro-nome" placeholder="Nome do Aventureiro" required>
+        <input type="text" name="classe" id="aventureiro-classe" placeholder="Classe (Ex: Guerreiro, Mago)" required>
+        
+        <button type="submit">Salvar Aventureiro</button>
+    </form>
+
+    <!-- A lista de aventureiros será preenchida pelo JavaScript -->
+    <ul id="aventureiro-list">
+        <!-- Exemplo de como um item ficará:
+        <li>
+            <div class="info">
+                <strong>Aribaldo</strong> (Pipoqueiro) - Nível 1
+            </div>
+            <div class="actions">
+                <button class="edit-btn">Editar</button>
+                <button class="delete-btn">Excluir</button>
+            </div>
+        </li>
+        -->
+    </ul>
+
+    <script src="app.js"></script>
+</body>
+</html>
