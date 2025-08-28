@@ -9,6 +9,7 @@ const QuadroDeMissoes = require('../funcoes/QuadroDeMissoes');
 *QuadroDeMissoes.sugerirMissaoParaGuilda(umaGuilda);
 */
 
+
 //importando somente as funções necessárias, com 'binding':
 const {avaliarPoderDoGrupo, sugerirMissaoParaGuilda} = require('../funcoes/QuadroDeMissoes');
 
