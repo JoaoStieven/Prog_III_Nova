@@ -1,11 +1,45 @@
-<html>
-    <head>
-        <title>Cadastro de Aventureiros</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-        <button id="btn-getAventureiro">Consultar Aventureiros</button>
-        <section id="section-aventureiro"></section>
-    </body>
-    <script src="app.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Aventureiros</title>
+    <script defer src="app.js" type="module"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 p-4">
+    <main class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Gerenciador de Aventureiros</h1>
+
+        <!-- Formulário de cadastro/edição -->
+        <section class="bg-white p-4 rounded shadow mb-6">
+            <h2 class="text-lg font-semibold mb-2">Formulário</h2>
+            <form id="form-aventureiro" class="space-y-2" method="post" action="/aventureiro">
+                <input type="hidden" name="id" id="id" />
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input class="border p-1 w-full" type="text" id="nome" name="nome" required />
+                </div>
+                <div>
+                    <label for="classe">Classe:</label>
+                    <input class="border p-1 w-full" type="text" id="classe" name="classe" required />
+                </div>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" type="submit">Salvar</button>
+                <button class="bg-gray-300 px-4 py-2 rounded" type="reset">Limpar</button>
+                <button class="bg-green-300 px-4 py-2 rounded" type="button" id="btn-getAventureiro">Buscar</button>
+            </form>
+        </section>
+
+        <!-- Lista de aventureiros -->
+        <section class="bg-white p-4 rounded shadow" id="section-aventureiro">
+            <h2 class="text-lg font-semibold mb-2">Aventureiros Cadastrados</h2>
+            <ul id="lista-aventureiros" class="space-y-2">
+                <!-- Os aventureiros serão listados aqui via JS -->
+            </ul>
+        </section>
+    </main>
+</body>
+
 </html>

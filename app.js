@@ -19,6 +19,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'classes')));
+app.use(express.static(path.join(__dirname, 'funcoes')));
+app.use(express.static(path.join(__dirname, 'modelo')));
 
 app.use('/', indexRouter);
 app.use('/guildas', guildasRouter);
